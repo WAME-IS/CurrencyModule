@@ -1,0 +1,15 @@
+services:
+	- Wame\CurrencyModule\Vendor\Wame\SettingsModule\Components\ICurrencyListControlFactory
+
+
+	CurrencyListForm:
+		class: Wame\CurrencyModule\Vendor\Wame\SettingsModule\Forms\CurrencyListForm
+
+
+	CurrencySettings:
+		class: Wame\CurrencyModule\Vendor\Wame\SettingsModule\Models\Currency
+
+
+	SettingsManager:
+		setup:
+			- addType(@CurrencySettings, 'Currency')

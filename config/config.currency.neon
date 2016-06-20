@@ -1,0 +1,25 @@
+services:
+	PermissionObject:
+		setup:
+			- addResource('admin.currency')
+			- addResourceAction('admin.currency', 'view')
+			- allow('moderator', 'admin.currency', 'view')
+			- addResourceAction('admin.currency', 'create')
+			- allow('admin', 'admin.currency', 'create')
+			- addResourceAction('admin.currency', 'edit')
+			- allow('moderator', 'admin.currency', 'edit')
+			- addResourceAction('admin.currency', 'delete')
+			- allow('admin', 'admin.currency', 'delete')
+
+
+	# Entities
+	- Wame\CurrencyModule\Entities\CurrencyEntity
+
+
+	# Repositories
+	- Wame\CurrencyModule\Repositories\CurrencyRepository
+
+
+doctrine:
+	metadata:
+		Wame\CurrencyModule\Entities: %appDir%/../vendor/wame/CurrencyModule/entities

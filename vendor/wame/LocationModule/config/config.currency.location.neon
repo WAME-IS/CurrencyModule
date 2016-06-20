@@ -1,0 +1,7 @@
+services:
+	- {class: Wame\CurrencyModule\Vendor\Wame\LocationModule\Vendor\Wame\AdminModule\Events\StateFormListener, tags: [run]}
+
+
+	StateForm:
+		setup:
+			- addFormContainer(Wame\CurrencyModule\Vendor\Wame\LocationModule\Vendor\Wame\AdminModule\Forms\State\CurrencyFormContainer(), 'CurrencyFormContainer')
