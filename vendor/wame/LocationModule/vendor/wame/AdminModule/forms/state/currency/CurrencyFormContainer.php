@@ -20,8 +20,8 @@ class CurrencyFormContainer extends BaseFormContainer
 	
 	/** @var array */
 	private $currencyList;
-	
-	
+
+
 	public function __construct(
 		CurrencyRepository $currencyRepository
 	) {
@@ -31,8 +31,8 @@ class CurrencyFormContainer extends BaseFormContainer
 
 		$this->currencyList = $this->getCurrencies();
 	}
-	
-	
+
+
 	private function getCurrencies()
 	{
 		$return = [];
@@ -45,15 +45,8 @@ class CurrencyFormContainer extends BaseFormContainer
 		
 		return $return;
 	}
-	
-	
-    public function render() 
-	{
-        $this->template->_form = $this->getForm();
-        $this->template->render(__DIR__ . '/default.latte');
-    }
 
-	
+
     public function configure() 
 	{
 		$form = $this->getForm();
@@ -62,8 +55,8 @@ class CurrencyFormContainer extends BaseFormContainer
 				->setPrompt('- ' . _('Select currency') . ' -')
 				->setRequired(_('Please select currency'));
     }
-	
-	
+
+
 	public function setDefaultValues($stateForm)
 	{
 		$form = $this->getForm();
