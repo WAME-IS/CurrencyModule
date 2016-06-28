@@ -104,7 +104,7 @@ class CurrencyListForm extends FormFactory
 	 */
 	private function update($form, $values)
 	{
-		$editDate = $this->formatDate('now');
+		$editDate = \Wame\Utils\Date::toDateTime('now');
 		$editUser = $this->userRepository->get(['id' => $this->user->id]);
 		
 		foreach ($this->currencies as $currencyId => $currency) {
