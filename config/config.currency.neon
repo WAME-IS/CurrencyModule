@@ -11,11 +11,6 @@ services:
 			- addResourceAction('admin.currency', 'delete')
 			- allow('admin', 'admin.currency', 'delete')
 
-
-	# Entities
-	- Wame\CurrencyModule\Entities\CurrencyEntity
-
-
 	# Repositories
 	- Wame\CurrencyModule\Repositories\CurrencyRepository
 

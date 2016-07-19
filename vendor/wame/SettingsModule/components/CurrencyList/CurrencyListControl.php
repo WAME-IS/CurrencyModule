@@ -2,6 +2,7 @@
 
 namespace Wame\CurrencyModule\Vendor\Wame\SettingsModule\Components;
 
+use Nette\DI\Container;
 use Wame\Core\Components\BaseControl;
 use Wame\CurrencyModule\Repositories\CurrencyRepository;
 use Wame\CurrencyModule\Vendor\Wame\SettingsModule\Forms\CurrencyListForm;
@@ -27,10 +28,11 @@ class CurrencyListControl extends BaseControl
 	
 	
 	public function __construct(
+    Container $container,
 		CurrencyRepository $currencyRepository,
 		CurrencyListForm $currencyListForm
 	) {
-		parent::__construct();
+		parent::__construct($container);
 		
 		$this->currencyRepository = $currencyRepository;
 		$this->currencyListForm = $currencyListForm;
