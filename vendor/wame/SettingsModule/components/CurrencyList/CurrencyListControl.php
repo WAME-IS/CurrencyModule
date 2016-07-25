@@ -50,7 +50,6 @@ class CurrencyListControl extends BaseControl
 	public function render()
 	{
 		$this->template->currencies = $this->currencyRepository->find(['status !=' => CurrencyRepository::STATUS_REMOVE]);
-		$this->componentRender();
 	}
 
 }
