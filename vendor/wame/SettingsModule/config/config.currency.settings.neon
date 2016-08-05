@@ -10,6 +10,6 @@ services:
 		class: Wame\CurrencyModule\Vendor\Wame\SettingsModule\Models\Currency
 
 
-	SettingsManager:
+	SettingsGroupRegister:
 		setup:
-			- addType(@CurrencySettings, 'Currency')
+			- add(@CurrencySettings, 'Currency')

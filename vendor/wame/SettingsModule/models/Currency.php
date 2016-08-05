@@ -2,11 +2,11 @@
 
 namespace Wame\CurrencyModule\Vendor\Wame\SettingsModule\Models;
 
-use Wame\SettingsModule\Models\SettingsType;
+use Wame\SettingsModule\Registers\Types\SettingsGroup;
 use Wame\CurrencyModule\Vendor\Wame\SettingsModule\Components\ICurrencyListControlFactory;
 
 
-class Currency extends SettingsType
+class Currency extends SettingsGroup
 {
 	/** @var ICurrencyListControlFactory */
 	private $ICurrencyListControlFactory;
