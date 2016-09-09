@@ -105,7 +105,6 @@ class CurrencyListForm extends FormFactory
 	private function update($form, $values)
 	{
 		$editDate = \Wame\Utils\Date::toDateTime('now');
-		$editUser = $this->userRepository->get(['id' => $this->user->id]);
 		
 		foreach ($this->currencies as $currencyId => $currency) {
 			$coefficient = $values['coefficient_' . $currencyId];
@@ -121,7 +120,7 @@ class CurrencyListForm extends FormFactory
 				$currencyEntity->setCoefficient($coefficient);
 				$currencyEntity->setStatus($status);
 				$currencyEntity->setEditDate($editDate);
-				$currencyEntity->setEditUser($editUser);
+				$currencyEntity->setEditUser($this->user->getEntity());
 		
 				$currencyNew = $this->currencyRepository->update($currencyEntity);
 				

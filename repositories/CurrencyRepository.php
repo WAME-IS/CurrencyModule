@@ -5,7 +5,6 @@ namespace Wame\CurrencyModule\Repositories;
 use Wame\Core\Repositories\BaseRepository;
 use Wame\CurrencyModule\Entities\CurrencyEntity;
 
-
 class CurrencyRepository extends BaseRepository
 {
 	const STATUS_REMOVE = 0;
@@ -16,13 +15,9 @@ class CurrencyRepository extends BaseRepository
 	const MAIN_ENABLED = 1;
 
 	
-    public function __construct(
-		\Nette\DI\Container $container, 
-		\Kdyby\Doctrine\EntityManager $entityManager, 
-		\h4kuna\Gettext\GettextSetup $translator, 
-		\Nette\Security\User $user
-	) {
-        parent::__construct($container, $entityManager, $translator, $user, CurrencyEntity::class);
+    public function __construct()
+    {
+        parent::__construct(CurrencyEntity::class);
     }
 
 
