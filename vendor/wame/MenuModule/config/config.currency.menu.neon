@@ -1,0 +1,4 @@
+services:
+	AdminMenu:
+		setup:
+			- setService(Wame\CurrencyModule\Vendor\Wame\MenuModule\Components\MenuControl\AdminMenu\AdminSettingsMenuItem())
