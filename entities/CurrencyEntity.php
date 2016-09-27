@@ -28,7 +28,22 @@ class CurrencyEntity extends BaseEntity
 	 * @ORM\Column(name="symbol", type="string", length=5)
 	 */
 	protected $symbol;
+    
+    /**
+	 * @ORM\Column(name="decimal_separator", type="string", length=1)
+	 */
+    protected $decimalSeparator;
 	
+    /**
+	 * @ORM\Column(name="grouping_separator", type="string", length=1)
+	 */
+    protected $groupingSeparator;
+    
+    /**
+	 * @ORM\Column(name="symbol_placement", type="boolean")
+	 */
+    protected $symbolPlacement;
+    
 	/**
 	 * @ORM\Column(name="coefficient", type="decimal", scale=4)
 	 */
