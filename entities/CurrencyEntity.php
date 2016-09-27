@@ -13,6 +13,9 @@ use Wame\Core\Entities\Columns;
  */
 class CurrencyEntity extends BaseEntity 
 {
+    const SYMBOL_PLACEMENT_LEFT = false;
+    const SYMBOL_PLACEMENT_RIGHT = true;
+    
 	use Columns\Identifier;
 	use Columns\EditDate;
 	use Columns\EditUser;
