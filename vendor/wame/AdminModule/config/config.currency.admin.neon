@@ -1,0 +1,35 @@
+services:
+    PermissionObject:
+        setup:
+            - addResource('admin.currency')
+            - addResourceAction('admin.currency', 'view')
+            - allow('moderator', 'admin.currency', 'view')
+            - addResourceAction('admin.currency', 'create')
+            - allow('admin', 'admin.currency', 'create')
+            - addResourceAction('admin.currency', 'edit')
+            - allow('moderator', 'admin.currency', 'edit')
+            - addResourceAction('admin.currency', 'delete')
+            - allow('admin', 'admin.currency', 'delete')
+
+
+    - Wame\CurrencyModule\Vendor\Wame\AdminModule\Forms\Containers\ICoefficientContainerFactory
+
+
+    Admin.CurrencyFormBuilder:
+        class: Wame\DynamicObject\Forms\EntityFormBuilder
+        setup:
+            - setRepository(@CurrencyRepository)
+            - redirectTo('Currency:', { 'id' : null })
+            - add(@Wame\CurrencyModule\Vendor\Wame\AdminModule\Forms\Containers\ICoefficientContainerFactory, 'CoefficientContainer', {priority: 100})
+            - add(@Wame\DynamicObject\Forms\Containers\ISubmitContainerFactory, 'SubmitContainer', {priority: 10})
+
+
+    Admin.CurrencyGrid:
+        class: Wame\CurrencyModule\Vendor\Wame\AdminModule\Grids\CurrencyGrid
+        setup:
+            - add(Wame\CurrencyModule\Vendor\Wame\AdminModule\Grids\Columns\Code(), null, {priority: 100})
+            - add(Wame\DataGridControl\Columns\Title(), null, {priority: 90})
+            - add(Wame\CurrencyModule\Vendor\Wame\AdminModule\Grids\Columns\Symbol(), null, {priority: 80})
+            - add(Wame\CurrencyModule\Vendor\Wame\AdminModule\Grids\Columns\Coefficient(), null, {priority: 70})
+            - add(Wame\DataGridControl\Columns\Status(), null, {priority: 60})
+            - add(Wame\DataGridControl\Actions\EditModal(), null, {priority: 1})
