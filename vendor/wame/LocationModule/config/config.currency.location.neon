@@ -1,7 +1,6 @@
 services:
-	- {class: Wame\CurrencyModule\Vendor\Wame\LocationModule\Vendor\Wame\AdminModule\Events\StateFormListener, tags: [run]}
+    - Wame\CurrencyModule\Vendor\Wame\LocationModule\Vendor\Wame\AdminModule\Forms\State\Containers\ICurrencyContainerFactory
 
-
-	StateForm:
-		setup:
-			- addFormContainer(Wame\CurrencyModule\Vendor\Wame\LocationModule\Vendor\Wame\AdminModule\Forms\State\CurrencyFormContainer(), 'CurrencyFormContainer')
+    Admin.StateFormBuilder:
+        setup:
+            - add(@Wame\CurrencyModule\Vendor\Wame\LocationModule\Vendor\Wame\AdminModule\Forms\State\Containers\ICurrencyContainerFactory, 'CurrencyContainer', {priority: 15})
