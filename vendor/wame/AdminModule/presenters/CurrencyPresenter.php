@@ -16,6 +16,14 @@ class CurrencyPresenter extends AdminFormPresenter
 	protected $entity;
 
 
+    /** actions ***************************************************** */
+
+	public function actionEdit()
+	{
+		$this->entity = $this->repository->get(['id' => $this->id]);
+	}
+
+
     /** renders ***************************************************** */
 
 	public function renderDefault()
