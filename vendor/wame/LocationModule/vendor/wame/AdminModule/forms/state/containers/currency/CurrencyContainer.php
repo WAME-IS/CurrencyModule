@@ -24,9 +24,10 @@ class CurrencyContainer extends BaseContainer
 
 
    	public function __construct(
+        \Nette\DI\Container $container,
 		CurrencyRepository $currencyRepository
 	) {
-		parent::__construct();
+		parent::__construct($container);
 
 		$this->currencyRepository = $currencyRepository;
 		$this->currencyList = $currencyRepository->getCurrencyList();
