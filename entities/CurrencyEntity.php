@@ -21,7 +21,8 @@ class CurrencyEntity extends BaseEntity
 	use Columns\EditUser;
 	use Columns\Status;
 	use Columns\Title;
-	
+	use Columns\Main;
+
 	/**
 	 * @ORM\Column(name="code", type="string", length=3)
 	 */
@@ -52,11 +53,6 @@ class CurrencyEntity extends BaseEntity
 	 */
 	protected $coefficient;
 	
-	/**
-	 * @ORM\Column(name="main", type="boolean")
-	 */
-	protected $main;
-	
 	
 	/** get ************************************************************/
 
@@ -73,11 +69,6 @@ class CurrencyEntity extends BaseEntity
 	public function getCoefficient()
 	{
 		return $this->coefficient;
-	}
-
-	public function getMain()
-	{
-		return $this->main;
 	}
 
 
@@ -100,13 +91,6 @@ class CurrencyEntity extends BaseEntity
 	public function setCoefficient($coefficient)
 	{
 		$this->coefficient = $coefficient;
-		
-		return $this;
-	}
-
-	public function setMain($main)
-	{
-		$this->main = $main;
 		
 		return $this;
 	}

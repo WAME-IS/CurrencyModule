@@ -3,6 +3,7 @@
 namespace Wame\CurrencyModule\Vendor\Wame\MenuModule\Components\MenuControl\AdminMenu;
 
 use Nette\Application\LinkGenerator;
+use Wame\MenuModule\Models\IMenuItem;
 use Wame\MenuModule\Models\Item;
 
 interface IAdminSettingsMenuItem
@@ -12,7 +13,7 @@ interface IAdminSettingsMenuItem
 }
 
 
-class AdminSettingsMenuItem implements \Wame\MenuModule\Models\IMenuItem
+class AdminSettingsMenuItem implements IMenuItem
 {
     /** @var LinkGenerator */
 	private $linkGenerator;
