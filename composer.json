@@ -16,8 +16,7 @@
     "config": { "secure-http": false },
     "require": {
         "wame/Core": ">=0.0.1",
-        "wame/SettingsModule": ">=0.0.1",
-        "wame/ShopModule": ">=0.0.1"
+        "wame/SettingsModule": ">=0.0.1"
     },
     "autoload": {
         "classmap": [
